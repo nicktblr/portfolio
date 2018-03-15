@@ -8,6 +8,11 @@ div
 	margin: 0 0;
 }
 
+h1,h2
+{
+	color: #404040;
+}
+
 h1
 {
 	font-size: 10em;
@@ -19,6 +24,11 @@ h2
 {
 	font-size: 2.5em;
 	margin: 0 0;
+}
+
+p
+{
+	font-size: 1.25em;
 }
 
 .pusher
@@ -44,15 +54,18 @@ h2
 .sidebar .bottom-aligned div
 {
 	position: absolute;
-	bottom: 15px;
+	bottom: 0;
 	left: 0;
 	width: 100%;
+	background-color: gray;
+	height: 5%;
+	text-align: center;
 }
 
 .sidebar .bottom-aligned div i
 {
 	margin: 0 10%;
-	text-align: center;
+	margin-top: 3.5%;
 }
 
 .pusher .top-aligned
@@ -66,15 +79,26 @@ h2
 	text-align: center;
 }
 
+.item
+{
+	height: 10%;
+}
+
 #menu-button
 {
-	margin-top: 2%;
+	margin-top: 1%;
 }
 
 #menu-button i
 {
 	width: 50%;
 	margin: 0 auto;
+}
+
+#contact-icons
+{
+	display: inline-block;
+	height: 100%;
 }
 
 #intro

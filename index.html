@@ -21,9 +21,11 @@
 	</div>
 	<div class="bottom-aligned">
 		<div>
-			<i class="large link github icon inverted"></i>
-			<i class="large link linkedin icon inverted"></i>
-			<i class="large link envelope icon inverted"></i>
+			<div id="contact-icons">
+				<i class="large link github icon"></i>
+				<i class="large link linkedin icon"></i>
+				<i class="large link envelope icon"></i>
+			</div>
 		</div>
 	</div>
 </div>
@@ -61,6 +63,9 @@
 	$('#menu-button').click(function(){
 		$('.ui.sidebar').sidebar('toggle');
 	});
+
+	$('.github').click(function(){ window.open("https://github.com/nicktblr", "_blank"); });
+	$('.linkedin').click(function(){ window.open("https://www.linkedin.com/in/ntabler/", "_blank"); });
 
 	$('#menu-button').hover(
 		function(){
