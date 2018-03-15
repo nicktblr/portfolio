@@ -12,26 +12,67 @@
 </head>
 <body>
 
-
-<div class="ui grid">
-	<div class="two wide column" id="sidebar">
-		<div id="logo">
-			<h1>Nick Tabler</h1>
-		</div>
-		<div id="menu-options">
-			<h3>Education.</h3>
-			<h3>Experience.</h3>
-			<h3>Projects.</h3>
-		</div>
+<div class="ui wide sidebar inverted vertical menu">
+	<div class="top-aligned">
+		<a class="item"><i class="user icon inverted"></i>Introduction.</a>
+		<a class="item"><i class="book icon inverted"></i>Education.</a>
+		<a class="item"><i class="briefcase icon inverted"></i>Experience.</a>
+		<a class="item"><i class="code icon inverted"></i>Projects.</a>
 	</div>
-	<div class="fourteen wide column">
-		<div class="ui container" id="content">
-			<p>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eget mauris ullamcorper, finibus augue vehicula, accumsan velit. Phasellus at metus quis velit sodales sollicitudin in convallis turpis. Phasellus nec neque sagittis, pulvinar est quis, suscipit augue. Fusce mollis eros at risus aliquam, vitae interdum dolor sodales. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec non velit aliquam, sagittis mi nec, venenatis magna. Morbi imperdiet, risus vitae interdum consectetur, purus felis luctus diam, sed vehicula mi dui vel tellus. Duis aliquam metus id sem pretium tempor. Curabitur pulvinar at tellus id mollis. Pellentesque dolor dui, rutrum nec lectus vel, aliquet elementum lacus. Nullam id fermentum est. Mauris ullamcorper aliquam est, vitae bibendum lorem sagittis eu. In hac habitasse platea dictumst.
-			</p>
+	<div class="bottom-aligned">
+		<div>
+			<i class="large link github icon inverted"></i>
+			<i class="large link linkedin icon inverted"></i>
+			<i class="large link envelope icon inverted"></i>
 		</div>
 	</div>
 </div>
 
+<div class="pusher">
+
+	<div class="ui black big launch right attached fixed button" id="menu-button">
+		<i class="content icon"></i>
+	</div>
+
+
+	<div class="ui container">
+		<div class="top-aligned">
+			<div id="intro">
+				<h1>NICK TABLER</h1>
+				<h2><i>Software Developer. Electrical Engineer.</i></h2>
+				<div class="ui divider"></div>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eleifend sit amet est nec tincidunt. Proin mollis nunc justo, nec feugiat risus ornare sit amet. Etiam nulla lacus, porta ut dapibus id, facilisis ac mi. Nam facilisis convallis tincidunt. Nunc pretium ipsum neque, non aliquam orci sodales et. Proin vulputate porta diam nec interdum. Mauris vel imperdiet libero. Etiam sodales purus tempor varius hendrerit. Vestibulum ornare dui sed ante pulvinar placerat.</p>
+
+				<p>In suscipit rutrum ante, at rutrum erat viverra ac. Suspendisse et tristique eros. Integer tortor risus, rhoncus quis tellus at, blandit fringilla metus. In tristique lectus ac ex malesuada condimentum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Interdum et malesuada fames ac ante ipsum primis in faucibus. Integer venenatis lectus in ipsum ornare, nec aliquet odio sagittis. Vivamus fringilla at velit et consequat. Cras eu bibendum urna, id efficitur massa. Integer aliquam, ipsum at ornare viverra, purus arcu hendrerit leo, vitae tempor lectus augue ut lacus. Curabitur a justo ut est consectetur euismod posuere fermentum urna. Suspendisse nec pharetra ipsum. Aliquam nec leo a elit tempus sagittis. Duis et ultrices purus, non pulvinar odio. Ut non magna et sapien sollicitudin vehicula. Maecenas id nisl non ante eleifend tristique.</p>
+
+				<p>Pellentesque tempor ipsum quis risus dictum tristique. Aliquam in mattis odio. Nam facilisis enim ac nunc interdum, a mollis nisl tristique. Aliquam erat volutpat. Aenean accumsan consequat eleifend. Proin interdum tempus tincidunt. Quisque vel ipsum eleifend, luctus ex nec, convallis nisi. Mauris vestibulum nisl eget arcu tristique tincidunt. Donec sed ante imperdiet, condimentum magna vitae, imperdiet purus. Nunc eros augue, elementum a ex et, varius accumsan dui. Maecenas quis blandit mi.</p>
+
+				<p>Curabitur tincidunt ipsum risus, nec hendrerit nulla interdum id. Nulla consequat ullamcorper erat eu elementum. Sed faucibus velit tortor, vitae congue ex sodales in. Fusce consequat sem et diam tempor posuere. Pellentesque sed vulputate nulla. Donec est purus, congue non vulputate nec, molestie ut risus. Maecenas at justo consequat, sodales nulla eu, lobortis sem.</p>
+			</div>
+		</div>
+		<div class="bottom-aligned">
+			<i class="huge blue link chevron down icon"></i>
+		</div>
+	</div>
+</div>
+
+
+<script type="text/javascript">
+	$('#menu-button').click(function(){
+		$('.ui.sidebar').sidebar('toggle');
+	});
+
+	$('#menu-button').hover(
+		function(){
+			$('.text.hidden').transition('fade right');
+		},
+		function(){
+			$('.text.hidden').transition('fade right');
+		}
+	);
+
+</script>
+
 </body>
 </html>
+

@@ -1,4 +1,4 @@
-body
+html, body
 {
 	height: 100%;
 }
@@ -8,35 +8,77 @@ div
 	margin: 0 0;
 }
 
-.grid
+h1
+{
+	font-size: 10em;
+	text-align: justify;
+	margin: 0 0;
+}
+
+h2
+{
+	font-size: 2.5em;
+	margin: 0 0;
+}
+
+.pusher
 {
 	height: 100%;
 }
 
-#sidebar
+.ui.container
 {
-	background-color: #0E6EB8;
-	color: #FFFFFF;
+	height: 90%;
 }
 
-#logo
+.sidebar .top-aligned
 {
-	height: 15%;
+	height: 50%;
+}
+
+.sidebar .bottom-aligned
+{
+	height: 50%;
+}
+
+.sidebar .bottom-aligned div
+{
+	position: absolute;
+	bottom: 15px;
+	left: 0;
+	width: 100%;
+}
+
+.sidebar .bottom-aligned div i
+{
+	margin: 0 10%;
 	text-align: center;
 }
 
-#menu-options
+.pusher .top-aligned
 {
-	height: 75%;
+	height: 90%;
+}
+
+.pusher .bottom-aligned
+{
+	height: 10%;
 	text-align: center;
 }
 
-#sidebar > div
+#menu-button
 {
-	padding: 10px 10px;
+	margin-top: 2%;
 }
 
-#content > div
+#menu-button i
 {
-	padding: 10px 10px;
+	width: 50%;
+	margin: 0 auto;
+}
+
+#intro
+{
+	height: 100%;
+	margin: auto auto;
 }
