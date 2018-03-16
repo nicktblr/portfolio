@@ -59,16 +59,49 @@
 			<div id="education" class="page transition hidden">
 				<div class="page-header">
 					<h1>EDUCATION</h1>
-					<h2><i>University of Alberta</i></h2>
+					<h2><i>B.Sc. Electrical Engineering (Co-op Option)</i></h2>
 				</div>
 				<div class="ui divider"></div>
 				<div class="page-body">
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eleifend sit amet est nec tincidunt. Proin mollis nunc justo, nec feugiat risus ornare sit amet. Etiam nulla lacus, porta ut dapibus id, facilisis ac mi. Nam facilisis convallis tincidunt. Nunc pretium ipsum neque, non aliquam orci sodales et. Proin vulputate porta diam nec interdum. Mauris vel imperdiet libero. Etiam sodales purus tempor varius hendrerit. Vestibulum ornare dui sed ante pulvinar placerat.</p>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eleifend sit amet est nec tincidunt. Proin mollis nunc justo, nec feugiat risus ornare sit amet. Etiam nulla lacus, porta ut dapibus id, facilisis ac mi. Nam facilisis convallis tincidunt. Nunc pretium ipsum neque, non aliquam orci sodales et. Proin vulputate porta diam nec interdum. Mauris vel imperdiet libero. Etiam sodales purus tempor varius hendrerit. Vestibulum ornare dui sed ante pulvinar placerat.</p>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eleifend sit amet est nec tincidunt. Proin mollis nunc justo, nec feugiat risus ornare sit amet. Etiam nulla lacus, porta ut dapibus id, facilisis ac mi. Nam facilisis convallis tincidunt. Nunc pretium ipsum neque, non aliquam orci sodales et. Proin vulputate porta diam nec interdum. Mauris vel imperdiet libero. Etiam sodales purus tempor varius hendrerit. Vestibulum ornare dui sed ante pulvinar placerat.</p>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eleifend sit amet est nec tincidunt. Proin mollis nunc justo, nec feugiat risus ornare sit amet. Etiam nulla lacus, porta ut dapibus id, facilisis ac mi. Nam facilisis convallis tincidunt. Nunc pretium ipsum neque, non aliquam orci sodales et. Proin vulputate porta diam nec interdum. Mauris vel imperdiet libero. Etiam sodales purus tempor varius hendrerit. Vestibulum ornare dui sed ante pulvinar placerat.</p>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eleifend sit amet est nec tincidunt. Proin mollis nunc justo, nec feugiat risus ornare sit amet. Etiam nulla lacus, porta ut dapibus id, facilisis ac mi. Nam facilisis convallis tincidunt. Nunc pretium ipsum neque, non aliquam orci sodales et. Proin vulputate porta diam nec interdum. Mauris vel imperdiet libero. Etiam sodales purus tempor varius hendrerit. Vestibulum ornare dui sed ante pulvinar placerat.</p>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eleifend sit amet est nec tincidunt. Proin mollis nunc justo, nec feugiat risus ornare sit amet. Etiam nulla lacus, porta ut dapibus id, facilisis ac mi. Nam facilisis convallis tincidunt. Nunc pretium ipsum neque, non aliquam orci sodales et. Proin vulputate porta diam nec interdum. Mauris vel imperdiet libero. Etiam sodales purus tempor varius hendrerit. Vestibulum ornare dui sed ante pulvinar placerat.</p>
+					<div class="ui styled fluid accordion" id="accordion-education">
+					  <div class="title active">
+					    <i class="dropdown icon"></i>
+					    Summary
+					  </div>
+					  <div class="content active">
+					    <p class="transition visible" style="display: block !important;">A dog is a type of domesticated animal. Known for its loyalty and faithfulness, it can be found as a welcome guest in many households across the world.</p>
+					  </div>
+					  <div class="title">
+					    <i class="dropdown icon"></i>
+					    Coursework
+					  </div>
+					  <div class="content">
+					    <div class="ui grid">
+					    	<div class="eight wide column">
+					    		<div class="ui list">
+					    			<div class="header"><em>Year</em></div>
+					    			<div class="content">
+					    				<div class="list">
+						    				<div class="item"><b>ECE 449</b> —	Intelligent Systems Engineering</div>
+						    				<div class="item">ECE 457 —	Microfabrication and Devices</div>
+						    				<div class="item">ECE 458 —	Introduction to Microelectromechanical Systems</div>
+						    				<div class="item">ECE 464 —	Medical Robotics and Computer-Integrated Intervention</div>
+						    				<div class="item">ECE 471 —	Photonics I</div>
+						    				<div class="item">ECE 490 —	Electrical Engineering Design Project I</div>
+						    				<div class="item">a</div>
+						    				<div class="item">a</div>
+						    				<div class="item">a</div>
+						    				<div class="item">a</div>
+						    				<div class="item">a</div>
+						    				<div class="item">a</div>
+					    				</div>
+				    				</div>
+					    		</div>
+					    	</div>
+					    	<div class="eight wide column">asda</div>
+					    </div>
+					  </div>
+				  	</div>
 				</div>
 			</div>
 
@@ -98,11 +131,13 @@
 	var index = 0;
 	var nextIndex = 1;
 
+	$('#accordion-education').accordion();
+
 	$('#menu-button').hover(
 		function(){
 			$('#menu-button').animate(
 				{ width: '150px' },
-			 	400,
+			 	200,
 			 	function(){
 			 		$('#menu-text').transition('scale');
 			 	}
@@ -112,7 +147,7 @@
 			$('#menu-text').transition('scale', 0);
 			$('#menu-button').animate(
 				{ width: '50px' },
-			 	400
+			 	200
 			);
 		}
 	);
