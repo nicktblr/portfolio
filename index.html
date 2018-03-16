@@ -39,17 +39,32 @@
 
 	<div class="ui container">
 		<div class="top-aligned">
-			<div id="intro">
+			<div class="page" id="intro">
 				<h1>NICK TABLER</h1>
 				<h2><i>Software Developer. Electrical Engineer.</i></h2>
 				<div class="ui divider"></div>
 				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eleifend sit amet est nec tincidunt. Proin mollis nunc justo, nec feugiat risus ornare sit amet. Etiam nulla lacus, porta ut dapibus id, facilisis ac mi. Nam facilisis convallis tincidunt. Nunc pretium ipsum neque, non aliquam orci sodales et. Proin vulputate porta diam nec interdum. Mauris vel imperdiet libero. Etiam sodales purus tempor varius hendrerit. Vestibulum ornare dui sed ante pulvinar placerat.</p>
+			</div>
 
-				<p>In suscipit rutrum ante, at rutrum erat viverra ac. Suspendisse et tristique eros. Integer tortor risus, rhoncus quis tellus at, blandit fringilla metus. In tristique lectus ac ex malesuada condimentum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Interdum et malesuada fames ac ante ipsum primis in faucibus. Integer venenatis lectus in ipsum ornare, nec aliquet odio sagittis. Vivamus fringilla at velit et consequat. Cras eu bibendum urna, id efficitur massa. Integer aliquam, ipsum at ornare viverra, purus arcu hendrerit leo, vitae tempor lectus augue ut lacus. Curabitur a justo ut est consectetur euismod posuere fermentum urna. Suspendisse nec pharetra ipsum. Aliquam nec leo a elit tempus sagittis. Duis et ultrices purus, non pulvinar odio. Ut non magna et sapien sollicitudin vehicula. Maecenas id nisl non ante eleifend tristique.</p>
+			<div id="education" class="page transition hidden">
+				<h1>EDUCATION</h1>
+				<h2><i>University of Alberta</i></h2>
+				<div class="ui divider"></div>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eleifend sit amet est nec tincidunt. Proin mollis nunc justo, nec feugiat risus ornare sit amet. Etiam nulla lacus, porta ut dapibus id, facilisis ac mi. Nam facilisis convallis tincidunt. Nunc pretium ipsum neque, non aliquam orci sodales et. Proin vulputate porta diam nec interdum. Mauris vel imperdiet libero. Etiam sodales purus tempor varius hendrerit. Vestibulum ornare dui sed ante pulvinar placerat.</p>
+			</div>
 
-				<p>Pellentesque tempor ipsum quis risus dictum tristique. Aliquam in mattis odio. Nam facilisis enim ac nunc interdum, a mollis nisl tristique. Aliquam erat volutpat. Aenean accumsan consequat eleifend. Proin interdum tempus tincidunt. Quisque vel ipsum eleifend, luctus ex nec, convallis nisi. Mauris vestibulum nisl eget arcu tristique tincidunt. Donec sed ante imperdiet, condimentum magna vitae, imperdiet purus. Nunc eros augue, elementum a ex et, varius accumsan dui. Maecenas quis blandit mi.</p>
+			<div id="experience" class="page transition hidden">
+				<h1>EXPERIENCE</h1>
+				<h2><i>Less than you were hoping for.</i></h2>
+				<div class="ui divider"></div>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eleifend sit amet est nec tincidunt. Proin mollis nunc justo, nec feugiat risus ornare sit amet. Etiam nulla lacus, porta ut dapibus id, facilisis ac mi. Nam facilisis convallis tincidunt. Nunc pretium ipsum neque, non aliquam orci sodales et. Proin vulputate porta diam nec interdum. Mauris vel imperdiet libero. Etiam sodales purus tempor varius hendrerit. Vestibulum ornare dui sed ante pulvinar placerat.</p>
+			</div>
 
-				<p>Curabitur tincidunt ipsum risus, nec hendrerit nulla interdum id. Nulla consequat ullamcorper erat eu elementum. Sed faucibus velit tortor, vitae congue ex sodales in. Fusce consequat sem et diam tempor posuere. Pellentesque sed vulputate nulla. Donec est purus, congue non vulputate nec, molestie ut risus. Maecenas at justo consequat, sodales nulla eu, lobortis sem.</p>
+			<div id="projects" class="page transition hidden">
+				<h1>PROJECTS</h1>
+				<h2><i>I built a race car once.</i></h2>
+				<div class="ui divider"></div>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eleifend sit amet est nec tincidunt. Proin mollis nunc justo, nec feugiat risus ornare sit amet. Etiam nulla lacus, porta ut dapibus id, facilisis ac mi. Nam facilisis convallis tincidunt. Nunc pretium ipsum neque, non aliquam orci sodales et. Proin vulputate porta diam nec interdum. Mauris vel imperdiet libero. Etiam sodales purus tempor varius hendrerit. Vestibulum ornare dui sed ante pulvinar placerat.</p>
 			</div>
 		</div>
 		<div class="bottom-aligned">
@@ -60,21 +75,51 @@
 
 
 <script type="text/javascript">
+	var pages = ['intro', 'education', 'experience', 'projects'];
+	var index = 0;
+	var nextIndex = 1;
+
 	$('#menu-button').click(function(){
 		$('.ui.sidebar').sidebar('toggle');
 	});
 
+	$('.chevron').click(function(){
+	    nextIndex = index + 1;
+	    pageTransition();
+    });
+
+	function pageTransition()
+	{
+        $('#'+pages[index]).transition({
+            animation : 'fade down',
+            onComplete : function () {
+                $('#'+pages[nextIndex]).transition('fade up');
+                index = nextIndex;
+            }
+        });
+	}
+
+	$('.item').click(function(){
+	    switch(this.text)
+		{
+			case 'Introduction.':
+			    nextIndex = 0;
+			    break;
+			case 'Education.':
+			    nextIndex = 1;
+			    break;
+			case 'Experience.':
+			    nextIndex = 2;
+			    break;
+			case 'Projects.':
+			    nextIndex = 3;
+			    break;
+		}
+		pageTransition();
+	})
+
 	$('.github').click(function(){ window.open("https://github.com/nicktblr", "_blank"); });
 	$('.linkedin').click(function(){ window.open("https://www.linkedin.com/in/ntabler/", "_blank"); });
-
-	$('#menu-button').hover(
-		function(){
-			$('.text.hidden').transition('fade right');
-		},
-		function(){
-			$('.text.hidden').transition('fade right');
-		}
-	);
 
 </script>
 
