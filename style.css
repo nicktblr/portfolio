@@ -81,15 +81,40 @@ p
 	text-align: center;
 }
 
+.page
+{
+	height: 100%;
+	margin: auto auto;
+}
+
+.page-header
+{
+	height: 25%;
+}
+
+.page-body
+{
+	overflow-y: auto;
+	height: 70%;
+}
+
 .item
 {
 	height: 15%;
 	font-size: 1.5em;
 }
 
+.sidebar .top-aligned .item.selected
+{
+	background: rgba(255, 255, 255, 0.08);
+}
+
 #menu-button
 {
+	width: 50px;
+	height: 50px;
 	margin-top: 1%;
+	overflow: hidden;
 }
 
 #menu-button i
@@ -102,10 +127,4 @@ p
 {
 	display: inline-block;
 	height: 100%;
-}
-
-#intro
-{
-	height: 100%;
-	margin: auto auto;
 }
