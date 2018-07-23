@@ -2,17 +2,29 @@
 <html>
 <head>
 	<title>NICK TABLER</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.0/semantic.css">
 	<link rel="stylesheet" href="style.css">
 	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+	<script
+			src="https://code.jquery.com/jquery-3.1.1.min.js"
+			integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+			crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.0/semantic.js"></script>
 </head>
 <body>
-
-
+<div class="ui container">
+	<div id="content">
+		<h1>{{ header }}</h1>
+		<hr>
+		<p v-for="(item, index) in body">
+			{{ item.text }}
+		</p>
+	</div>
 </div>
 
-
+<script src="index.js"></script>
 <script type="text/javascript">
-	
+
 </script>
 
 </body>
