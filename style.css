@@ -3,6 +3,13 @@ html, body
 	height: 100%;
 }
 
+body
+{
+	background-image: url("res/mountains.jpeg");
+	background-size: cover;
+	background-color: #cccccc;
+}
+
 div
 {
 	margin: 0 0;
