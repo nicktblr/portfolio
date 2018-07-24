@@ -13,32 +13,37 @@
 </head>
 <body>
 
-<div class="ui black big launch left attached fixed button" id="menu-button">
-	<i class="content icon"></i>
-	<span class="text transition hidden" id='menu-text'>Menu</span>
+<div id="menu-button">
+	<div class="ui black big launch left attached fixed button">
+		<i class="content icon"></i>
+		<span class="text transition hidden" id='menu-text'>Menu</span>
+	</div>
 </div>
 
-
-<div class="ui container">
-	<div id="content">
-		<div id="content-header">
-			<h1 class="ui header inverted">{{ header }}</h1>
-			<div class="ui divider"></div>
+<div id="content-container" class="ui container">
+	<transition name="slide-fade">
+		<div v-if="show" id="content">
+			<div id="content-header">
+				<h1 class="ui header inverted">{{ header }}</h1>
+				<div class="ui divider"></div>
+			</div>
+			<div id="content-body">
+				<p v-for="(item, index) in body">
+					{{ item.text }}
+				</p>
+			</div>
+			<div id="next-page">
+				<i class="huge link chevron down icon"></i>
+			</div>
 		</div>
-		<div id="content-body">
-			<p v-for="(item, index) in body">
-				{{ item.text }}
-			</p>
-		</div>
-		<div id="next-page">
-			<i class="huge link chevron down icon"></i>
-		</div>
-	</div>
+	</transition>
 </div>
 
 <script src="index.js"></script>
 <script type="text/javascript">
-
+	$(".button").click(function(){
+		content.show = !content.show;
+	})
 </script>
 
 </body>

@@ -5,9 +5,10 @@ var bodytext = [
 ];
 
 var content = new Vue({
-    el: '#content',
+    el: '#content-container',
     data: {
         header: 'nick tabler',
-        body: bodytext
+        body: bodytext,
+        show: true
     }
 });
