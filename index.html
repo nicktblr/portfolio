@@ -24,56 +24,18 @@
 </div>
 
 <div class="ui container">
-	<div id="about" class="content">
+	<div v-for="(page, id) in pages" :id="id" class="content">
 		<div class="content-header">
-			<h1 class="inverted">{{ header }}</h1>
-			<div class="ui divider"></div>
+			<h1 class="inverted">{{ page.header }}</h1>
+			<div class="ui divider inverted"></div>
 		</div>
 		<div class="content-body">
-			<p v-for="(item, index) in body">{{ item.text }}</p>
+			<p v-for="(item, index) in page.body">{{ item.text }}</p>
 		</div>
-		<div class="next-page">
-			<i class="big link chevron down icon"></i>
-		</div>
-	</div>
-
-	<div id="education" class="content">
-		<div class="content-header">
-			<h1 class="inverted">{{ header }}</h1>
-			<div class="ui divider"></div>
-		</div>
-		<div class="content-body">
-			<p v-for="(item, index) in body">{{ item.text }}</p>
-		</div>
-		<div class="next-page">
-			<i class="big link chevron down icon"></i>
+		<div v-if="id != 'contact'" class="next-page">
+			<i class="huge link chevron down icon"></i>
 		</div>
 	</div>
-
-	<div id="experience" class="content">
-		<div class="content-header">
-			<h1 class="inverted">{{ header }}</h1>
-			<div class="ui divider"></div>
-		</div>
-		<div class="content-body">
-			<p v-for="(item, index) in body">{{ item.text }}</p>
-		</div>
-		<div class="next-page">
-			<i class="big link chevron down icon"></i>
-		</div>
-	</div>
-
-
-	<div id="contact" class="content">
-		<div class="content-header">
-			<h1 class="inverted">{{ header }}</h1>
-			<div class="ui divider"></div>
-		</div>
-		<div class="content-body">
-			<p v-for="(item, index) in body">{{ item.text }}</p>
-		</div>
-	</div>
-
 </div>
 
 
@@ -106,7 +68,7 @@
 	{
 	    var offset = page.offset().top
 	    if($(window).height() > $(window).width()){				// Check if portrait
-	        offset -= 0.099*$(window).height()
+	        offset -= 0.1*$(window).height()
 		}
         $('html, body')
             .animate({

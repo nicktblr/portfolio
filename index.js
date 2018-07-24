@@ -10,7 +10,7 @@ var edutext = [
     {text: 'electrical engineering'},
     {text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eleifend sit amet est nec tincidunt. Proin mollis nunc justo, nec feugiat risus ornare sit amet. Etiam nulla lacus, porta ut dapibus id, facilisis ac mi. Nam facilisis convallis tincidunt. Nunc pretium ipsum neque, non aliquam orci sodales et. Proin vulputate porta diam nec interdum. Mauris vel imperdiet libero. Etiam sodales purus tempor varius hendrerit. Vestibulum ornare dui sed ante pulvinar placerat.'},
     {text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eleifend sit amet est nec tincidunt. Proin mollis nunc justo, nec feugiat risus ornare sit amet. Etiam nulla lacus, porta ut dapibus id, facilisis ac mi. Nam facilisis convallis tincidunt. Nunc pretium ipsum neque, non aliquam orci sodales et. Proin vulputate porta diam nec interdum. Mauris vel imperdiet libero. Etiam sodales purus tempor varius hendrerit. Vestibulum ornare dui sed ante pulvinar placerat.'}
-]
+];
 
 var menuOptions ={
     menu_about: {text: 'about me.', selected: true},
@@ -19,37 +19,17 @@ var menuOptions ={
     menu_contact: {text: 'contact me.', selected: false}
 };
 
-var about = new Vue({
-    el: '#about',
+var container = new Vue({
+    el: '.container',
     data: {
-        header: 'nick tabler.',
-        body: abouttext
+        pages: {
+            about: {header: 'nick tabler.', body: abouttext},
+            education: {header: 'education.', body: edutext},
+            experience: {header: 'experience', body: edutext},
+            contact: {header: 'contact me', body: edutext}
+        }
     }
 });
-
-var education = new Vue({
-    el: '#education',
-    data: {
-        header: 'education.',
-        body: edutext
-    }
-})
-
-var experience = new Vue({
-    el: '#experience',
-    data: {
-        header: 'experience',
-        body: edutext
-    }
-})
-
-var contact = new Vue({
-    el: '#contact',
-    data: {
-        header: 'contact me',
-        body: edutext
-    }
-})
 
 var menu = new Vue({
     el: '#menu',

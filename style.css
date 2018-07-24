@@ -13,13 +13,21 @@ body
 h1
 {
 	font-family: 'Kalam', cursive;
-	font-size: 6vh;
+	font-size: 7vh;
 }
 
 p
 {
 	font-family: 'Source Sans Pro', sans-serif;
-	font-size: 2vh;
+	font-size: 2.5vh;
+}
+
+hr
+{
+	color: aliceblue;
+	height: 12px;
+	border: 0;
+	box-shadow: inset 0 12px 12px -12px rgba(0,0,0,0.5);
 }
 
 .ui.container
@@ -47,6 +55,11 @@ p
 #menu div:hover
 {
 	background-color: rgba(1,1,1,0.4);
+}
+
+#menu p
+{
+	font-size: 2vh;
 }
 
 .content
