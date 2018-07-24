@@ -12,13 +12,27 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.0/semantic.js"></script>
 </head>
 <body>
+
+<div class="ui black big launch left attached fixed button" id="menu-button">
+	<i class="content icon"></i>
+	<span class="text transition hidden" id='menu-text'>Menu</span>
+</div>
+
+
 <div class="ui container">
 	<div id="content">
-		<h1>{{ header }}</h1>
-		<hr>
-		<p v-for="(item, index) in body">
-			{{ item.text }}
-		</p>
+		<div id="content-header">
+			<h1 class="ui header inverted">{{ header }}</h1>
+			<div class="ui divider"></div>
+		</div>
+		<div id="content-body">
+			<p v-for="(item, index) in body">
+				{{ item.text }}
+			</p>
+		</div>
+		<div id="next-page">
+			<i class="huge link chevron down icon"></i>
+		</div>
 	</div>
 </div>
 

@@ -9,22 +9,47 @@ body
 {
 	background-image: url("res/mountains.jpeg");
 	background-size: cover;
-	padding: 3%;
-	padding-left: 0;
+	padding: 0%;
 }
 
 .ui.container
 {
 	height: 100%;
-	margin-left: 0;
+	margin-left: 0 !important;
+}
+
+#menu-button
+{
+	position: absolute;
+	right:0;
 }
 
 #content
 {
-	background-color: rgba(1,1,1,0.9);
-	color: #ffffff;
 	width: 50%;
 	min-width: 500px;
+	display: flex;
+	flex-flow: column;
+	background-color: rgba(1,1,1,0.9);
+	color: #ffffff;
 	height: 100%;
 	padding: 5%;
+	padding-bottom: 2%;
+	overflow: auto;
+}
+
+#content-header
+{
+}
+
+#content-body
+{
+	max-height: 80%;
+	overflow: auto;
+	flex-grow: 3;
+}
+
+#next-page
+{
+	text-align: center;
 }
