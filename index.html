@@ -22,36 +22,95 @@
 	</div>
 </div>
 
-<div id="content-container" class="ui container">
-	<transition name="slide-fade">
-		<div v-if="show" id="content">
-			<div id="content-header">
-				<h1 class="inverted">{{ header }}</h1>
-				<div class="ui divider"></div>
-			</div>
-			<div id="content-body">
-				<p v-for="(item, index) in body">{{ item.text }}</p>
-			</div>
-			<div id="next-page">
-				<i @click="show = !show" class="huge link chevron down icon"></i>
-			</div>
+<div class="ui container">
+	<div id="about" class="content">
+		<div class="content-header">
+			<h1 class="inverted">{{ header }}</h1>
+			<div class="ui divider"></div>
 		</div>
-	</transition>
+		<div class="content-body">
+			<p v-for="(item, index) in body">{{ item.text }}</p>
+		</div>
+		<div class="next-page">
+			<i class="huge link chevron down icon"></i>
+		</div>
+	</div>
+
+	<div id="education" class="content">
+		<div class="content-header">
+			<h1 class="inverted">{{ header }}</h1>
+			<div class="ui divider"></div>
+		</div>
+		<div class="content-body">
+			<p v-for="(item, index) in body">{{ item.text }}</p>
+		</div>
+		<div class="next-page">
+			<i class="huge link chevron down icon"></i>
+		</div>
+	</div>
+
+	<div id="experience" class="content">
+		<div class="content-header">
+			<h1 class="inverted">{{ header }}</h1>
+			<div class="ui divider"></div>
+		</div>
+		<div class="content-body">
+			<p v-for="(item, index) in body">{{ item.text }}</p>
+		</div>
+		<div class="next-page">
+			<i class="huge link chevron down icon"></i>
+		</div>
+	</div>
+
+
+	<div id="contact" class="content">
+		<div class="content-header">
+			<h1 class="inverted">{{ header }}</h1>
+			<div class="ui divider"></div>
+		</div>
+		<div class="content-body">
+			<p v-for="(item, index) in body">{{ item.text }}</p>
+		</div>
+	</div>
+
 </div>
+
+
 
 <script src="index.js"></script>
 <script type="text/javascript">
 	$('.menu-option').click(function(){
-	    $('.menu-option').removeClass('selected');
-	    $(this).addClass('selected');
-	})
+		var last = $('.selected').attr('id');
+		var next = $(this).attr('id');
+		changeSelection(last, next);
+		gotoPage($('#'+next.split('_')[1]))
+    });
 
-	$('#next-page').click(function(){
-	    var lastSelected = $('.selected').attr('id');
-	    $('.selected + .menu-option').addClass('selected');
-	    $('#'+lastSelected).removeClass('selected');
+	$('.next-page').click(function(){
+	    var last = $('.selected').attr('id');
+	    var next = $('.selected + .menu-option').attr('id');
+        changeSelection(last, next);
+        var nextpage = $(this).closest('.content').next()
+		console.log(nextpage)
+		gotoPage(nextpage)
+	});
 
-	})
+	function changeSelection(id1, id2)
+	{
+	    menu.options[id1].selected = false;
+	    menu.options[id2].selected = true;
+	}
+
+	function gotoPage(page)
+	{
+	    var offset = page.offset().top
+	    if($(window).height() > $(window).width()){				// Check if portrait
+	        offset -= 0.099*$(window).height()
+		}
+        $('html, body')
+            .animate({
+                scrollTop: offset}, 'slow', 'swing', function() {});
+    }
 
 </script>
 </body>
