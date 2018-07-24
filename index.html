@@ -15,10 +15,11 @@
 <body>
 
 <div id="menu">
-	<div><p>about me.</p></div>
-	<div><p>education.</p></div>
-	<div><p>experience.</p></div>
-	<div><p>contact.</p></div>
+	<div class="menu-option" v-for="(option, id) in options"
+		 :class="{ selected: option.selected }"
+		 :id="id">
+		<p>{{ option.text }}</p>
+	</div>
 </div>
 
 <div id="content-container" class="ui container">
@@ -29,9 +30,7 @@
 				<div class="ui divider"></div>
 			</div>
 			<div id="content-body">
-				<p v-for="(item, index) in body">
-					{{ item.text }}
-				</p>
+				<p v-for="(item, index) in body">{{ item.text }}</p>
 			</div>
 			<div id="next-page">
 				<i @click="show = !show" class="huge link chevron down icon"></i>
@@ -42,8 +41,19 @@
 
 <script src="index.js"></script>
 <script type="text/javascript">
-</script>
+	$('.menu-option').click(function(){
+	    $('.menu-option').removeClass('selected');
+	    $(this).addClass('selected');
+	})
 
+	$('#next-page').click(function(){
+	    var lastSelected = $('.selected').attr('id');
+	    $('.selected + .menu-option').addClass('selected');
+	    $('#'+lastSelected).removeClass('selected');
+
+	})
+
+</script>
 </body>
 </html>
 
