@@ -119,6 +119,7 @@ and (orientation: landscape){
 and (orientation: portrait) {
 	#content {
 		width: 100vw;
+		height: 90%;
 		background-color: rgba(1,1,1,0.8);
 	}
 
