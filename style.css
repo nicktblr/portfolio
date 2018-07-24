@@ -12,12 +12,14 @@ body
 
 h1
 {
-	font-size: 8vmin;
+	font-family: 'Kalam', cursive;
+	font-size: 6vh;
 }
 
 p
 {
-	font-size: 3vmin;
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 2vh;
 }
 
 .ui.container
