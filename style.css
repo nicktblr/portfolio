@@ -33,6 +33,10 @@ p
 	background-color: rgba(1,1,1,0.6);
 	color: white;
 	display: flex;
+	-webkit-user-select: none; /* Safari */
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* IE10+/Edge */
+	user-select: none; /* Standard */
 }
 
 #menu div:hover
@@ -40,8 +44,32 @@ p
 	background-color: rgba(1,1,1,0.4);
 }
 
+#content
+{
+	width: 80vh;
+	display: flex;
+	flex-flow: column;
+	color: #ffffff;
+	height: 100%;
+	padding: 5%;
+	padding-bottom: 2%;
+	overflow: auto;
+}
+
+#content-body
+{
+	max-height: 80%;
+	overflow: auto;
+	flex-grow: 3;
+}
+
+#next-page
+{
+	text-align: center;
+}
+
 @media only screen
-	and (orientation: landscape){
+and (orientation: landscape){
 	#menu{
 		position: absolute;
 		top: 50%;
@@ -79,36 +107,19 @@ p
 		border-radius: 0 0 0 2vw;
 
 	}
-}
-#content
-{
-	width: 80vh;
-	display: flex;
-	flex-flow: column;
-	background-color: rgba(1,1,1,0.9);
-	color: #ffffff;
-	height: 100%;
-	padding: 5%;
-	padding-bottom: 2%;
-	overflow: auto;
+
+	#content{
+		background-color: rgba(1,1,1,0.9);
+	}
 }
 
-#content-body
-{
-	max-height: 80%;
-	overflow: auto;
-	flex-grow: 3;
-}
 
-#next-page
-{
-	text-align: center;
-}
 
 @media only screen
 and (orientation: portrait) {
 	#content {
 		width: 100vw;
+		background-color: rgba(1,1,1,0.8);
 	}
 
 	#menu
