@@ -117,10 +117,15 @@ and (orientation: landscape){
 
 @media only screen
 and (orientation: portrait) {
+	.ui.container
+	{
+		height: 90%;
+		margin-left: 0 !important;
+	}
+
 	#content {
 		width: 100vw;
-		height: 90%;
-		background-color: rgba(1,1,1,0.8);
+		background-color: rgba(1,1,1,0.6);
 	}
 
 	#menu
@@ -128,6 +133,8 @@ and (orientation: portrait) {
 		position: relative;
 		height: 10vh;
 		flex-direction: row;
+		background-color: rgba(1,1,1,0.1);
+
 	}
 
 	#menu div
