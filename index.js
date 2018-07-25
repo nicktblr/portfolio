@@ -19,8 +19,8 @@ var container = new Vue({
         pages: {
             about: {header: 'nick tabler.', body: abouttext},
             education: {header: 'education.', body: edutext},
-            experience: {header: 'experience.', body: edutext},
-            contact: {header: 'contact me.', body: edutext}
+            experience: {header: 'experience.', body: exptext},
+            contact: {header: 'contact me.', body: context}
         }
     }
 });
