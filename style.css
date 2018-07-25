@@ -39,12 +39,14 @@ hr
 ul
 {
 	overflow: auto;
+	margin: 0;
 }
 
 li
 {
 	font-family: 'Source Sans Pro', sans-serif;
 	font-size: 2vh;
+	line-height: 1;
 }
 
 .ui.container
