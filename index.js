@@ -1,16 +1,10 @@
-var abouttext = [
-    {text: 'web developer'},
-    {text: '10x coder'},
-    {text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eleifend sit amet est nec tincidunt. Proin mollis nunc justo, nec feugiat risus ornare sit amet. Etiam nulla lacus, porta ut dapibus id, facilisis ac mi. Nam facilisis convallis tincidunt. Nunc pretium ipsum neque, non aliquam orci sodales et. Proin vulputate porta diam nec interdum. Mauris vel imperdiet libero. Etiam sodales purus tempor varius hendrerit. Vestibulum ornare dui sed ante pulvinar placerat.'},
-    {text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eleifend sit amet est nec tincidunt. Proin mollis nunc justo, nec feugiat risus ornare sit amet. Etiam nulla lacus, porta ut dapibus id, facilisis ac mi. Nam facilisis convallis tincidunt. Nunc pretium ipsum neque, non aliquam orci sodales et. Proin vulputate porta diam nec interdum. Mauris vel imperdiet libero. Etiam sodales purus tempor varius hendrerit. Vestibulum ornare dui sed ante pulvinar placerat.'}
-];
 
-var edutext = [
-    {text: 'uofa'},
-    {text: 'electrical engineering'},
-    {text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eleifend sit amet est nec tincidunt. Proin mollis nunc justo, nec feugiat risus ornare sit amet. Etiam nulla lacus, porta ut dapibus id, facilisis ac mi. Nam facilisis convallis tincidunt. Nunc pretium ipsum neque, non aliquam orci sodales et. Proin vulputate porta diam nec interdum. Mauris vel imperdiet libero. Etiam sodales purus tempor varius hendrerit. Vestibulum ornare dui sed ante pulvinar placerat.'},
-    {text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eleifend sit amet est nec tincidunt. Proin mollis nunc justo, nec feugiat risus ornare sit amet. Etiam nulla lacus, porta ut dapibus id, facilisis ac mi. Nam facilisis convallis tincidunt. Nunc pretium ipsum neque, non aliquam orci sodales et. Proin vulputate porta diam nec interdum. Mauris vel imperdiet libero. Etiam sodales purus tempor varius hendrerit. Vestibulum ornare dui sed ante pulvinar placerat.'}
-];
+// Best practice is to use an additional vue component instead of raw html
+
+var abouttext = '<p>engineering student</p>' +
+                '<p>computer programmer</p>' +
+                '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sagittis nec mauris et sagittis. Nulla dictum pellentesque enim in tristique. Proin sed odio a arcu commodo mattis ac vitae sapien. Ut dui lectus, tempus ac augue pulvinar, sagittis dapibus diam. Nunc lobortis sapien id dolor ornare, a aliquam turpis porta. Quisque eu vulputate mauris. Cras vel purus ut erat porttitor dignissim. Aliquam urna nibh, rutrum vitae mattis et, tempor dignissim felis. Sed sed ligula nisl. Aliquam finibus suscipit ligula sed feugiat.</p>'
+
 
 var menuOptions ={
     menu_about: {text: 'about me.', selected: true},
@@ -25,8 +19,8 @@ var container = new Vue({
         pages: {
             about: {header: 'nick tabler.', body: abouttext},
             education: {header: 'education.', body: edutext},
-            experience: {header: 'experience', body: edutext},
-            contact: {header: 'contact me', body: edutext}
+            experience: {header: 'experience.', body: edutext},
+            contact: {header: 'contact me.', body: edutext}
         }
     }
 });

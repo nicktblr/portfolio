@@ -12,8 +12,14 @@ body
 
 h1
 {
-	font-family: 'Kalam', cursive;
+	font-family: 'Karla', sans-serif;
 	font-size: 7vh;
+}
+
+h2
+{
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 3vh;
 }
 
 p
@@ -30,10 +36,27 @@ hr
 	box-shadow: inset 0 12px 12px -12px rgba(0,0,0,0.5);
 }
 
+ul
+{
+	overflow: auto;
+}
+
+li
+{
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 2vh;
+}
+
 .ui.container
 {
 	height: 100%;
 	margin-left: 0 !important;
+}
+
+.ui.accordion
+{
+	font-size: 2.5vh;
+	background: none;
 }
 
 .selected
@@ -62,7 +85,7 @@ hr
 	font-size: 2vh;
 }
 
-.content
+.page-content
 {
 	width: 80vh;
 	display: flex;
@@ -125,7 +148,7 @@ and (orientation: landscape){
 
 	}
 
-	.content{
+	.page-content{
 		background-color: rgba(1,1,1,0.9);
 	}
 }
@@ -140,7 +163,7 @@ and (orientation: portrait) {
 		margin-left: 0 !important;
 	}
 
-	.content {
+	.page-content {
 		margin-top: 10vh;
 		height: 90vh;
 		width: 100vw;

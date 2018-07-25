@@ -3,7 +3,7 @@
 <head>
 	<title>NICK TABLER</title>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.0/semantic.css">
-	<link href="https://fonts.googleapis.com/css?family=Kalam|Source+Sans+Pro" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Karla|Source+Sans+Pro" rel="stylesheet">
 	<link rel="stylesheet" href="style.css">
 	<link rel="stylesheet" href="background.css">
 	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
@@ -24,13 +24,13 @@
 </div>
 
 <div class="ui container">
-	<div v-for="(page, id) in pages" :id="id" class="content">
+	<div v-for="(page, id) in pages" :id="id" class="page-content">
 		<div class="content-header">
 			<h1 class="inverted">{{ page.header }}</h1>
 			<div class="ui divider inverted"></div>
 		</div>
-		<div class="content-body">
-			<p v-for="(item, index) in page.body">{{ item.text }}</p>
+		<div class="content-body" v-html="page.body">
+			<!--<p v-for="(item, index) in page.body">{{ item.text }}</p>-->
 		</div>
 		<div v-if="id != 'contact'" class="next-page">
 			<i class="huge link chevron down icon"></i>
@@ -39,9 +39,11 @@
 </div>
 
 
-
+<script src="static/education.js"></script>
 <script src="index.js"></script>
 <script type="text/javascript">
+    $('.ui.accordion').accordion();
+
 	$('.menu-option').click(function(){
 		var last = $('.selected').attr('id');
 		var next = $(this).attr('id');
@@ -53,7 +55,7 @@
 	    var last = $('.selected').attr('id');
 	    var next = $('.selected + .menu-option').attr('id');
         changeSelection(last, next);
-        var nextpage = $(this).closest('.content').next()
+        var nextpage = $(this).closest('.page-content').next()
 		console.log(nextpage)
 		gotoPage(nextpage)
 	});
