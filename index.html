@@ -47,7 +47,11 @@
 
 <script src="index.js"></script>
 <script type="text/javascript">
-	$('.ui.accordion').accordion();
+
+	// Return to first page on load, disregard cache
+    window.onbeforeunload = function(){ window.scrollTo(0,0); }
+
+	$('.ui.accordion').accordion();			// Required for the semantic ui accordion
 
 	$('.menu-option').click(function(){
 		var last = $('.selected').attr('id');
@@ -61,7 +65,6 @@
 	    var next = $('.selected + .menu-option').attr('id');
         changeSelection(last, next);
         var nextpage = $(this).closest('.page-content').next()
-		console.log(nextpage)
 		gotoPage(nextpage)
 	});
 
